@@ -5,8 +5,11 @@
 </template>
 
 <script>
-import PokemonPicture from "@/components/PokemonPicture";
-import PokemonOptions from "@/components/PokemonOptions";
+import PokemonPicture from "../components/PokemonPicture";
+import PokemonOptions from "../components/PokemonOptions";
+import getPokemonOptions from "../helpers/getPokemonOptions";
+
+getPokemonOptions()
 
 export default {
   name: "PokemonPage",
