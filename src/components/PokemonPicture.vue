@@ -12,7 +12,7 @@ export default {
       type: Number,
       required: true
     },
-    showPokemon:{
+    showPokemon: {
       type: Boolean,
       required: true,
       default: false
@@ -37,7 +37,7 @@ img {
   filter: brightness(0);
 }
 
-.visible{
+.visible {
   filter: none;
 }
 
