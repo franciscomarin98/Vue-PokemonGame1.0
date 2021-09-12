@@ -1,6 +1,6 @@
 <template>
   <div class="buttons-container">
-    <button v-for="option in pokemonOptions" :key="option.id">{{ option.name }}</button>
+    <button @click="$emit('pokemonSelected', option.id)" v-for="option in pokemonOptions" :key="option.id">{{ option.name }}</button>
   </div>
 </template>
 
