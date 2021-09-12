@@ -1,5 +1,8 @@
 # pokemom-app
 
+### Demo
+See [preview](https://vue-pokemon-game-fh.netlify.app/)
+
 ## Project setup
 ```
 yarn install
@@ -24,6 +27,3 @@ yarn test:unit
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
