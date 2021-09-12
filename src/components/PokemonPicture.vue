@@ -1,44 +1,44 @@
 <template>
-  <img :class="[showPokemon ? 'fade-in visible ' : 'invisible']"
-       :src="imgSrc"
-       alt="pokemon-img">
+    <img :class="[showPokemon ? 'fade-in visible ' : 'invisible']"
+         :src="imgSrc"
+         alt="pokemon-img">
 </template>
 
 <script>
 export default {
-  name: "PokemonPicture",
-  props: {
-    pokemonId: {
-      type: Number,
-      required: true
+    name: "PokemonPicture",
+    props: {
+        pokemonId: {
+            type: Number,
+            required: true
+        },
+        showPokemon: {
+            type: Boolean,
+            required: true,
+            default: false
+        }
     },
-    showPokemon: {
-      type: Boolean,
-      required: true,
-      default: false
-    }
-  },
-  computed: {
-    imgSrc() {
-      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.pokemonId}.svg`;
-    }
-  },
+    computed: {
+        imgSrc() {
+            return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.pokemonId}.svg`;
+        }
+    },
 }
 </script>
 
 <style scoped>
 
 img {
-  height: 14rem;
-  width: 14rem;
+    height: 14rem;
+    width: 14rem;
 }
 
 .invisible {
-  filter: brightness(0);
+    filter: brightness(0);
 }
 
 .visible {
-  filter: none;
+    filter: none;
 }
 
 </style>
