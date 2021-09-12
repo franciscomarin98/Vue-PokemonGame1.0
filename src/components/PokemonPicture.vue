@@ -29,8 +29,8 @@ export default {
 <style scoped>
 
 img {
-  height: 15rem;
-  width: 15rem;
+  height: 14rem;
+  width: 14rem;
 }
 
 .invisible {

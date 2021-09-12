@@ -6,6 +6,12 @@
     <h1>¿Quién es este pokémon?</h1>
     <PokemonPicture :pokemonId="pokemon.id" :showPokemon="showPokemon"/>
     <PokemonOptions :pokemonOptions="pokemonOptions" @pokemon-selected="checkAnswer"/>
+    <template class="fade-in" v-if="showAnswer">
+      <h2>{{ message }}</h2>
+      <button @click="newGame">
+        Nuevo juego
+      </button>
+    </template>
   </div>
 </template>
 
@@ -21,7 +27,9 @@ export default {
     return {
       pokemonOptions: [],
       pokemon: null,
-      showPokemon: false
+      showPokemon: false,
+      showAnswer: false,
+      message: ''
     }
   },
   methods: {
@@ -30,9 +38,21 @@ export default {
       const rndPokemon = Math.floor(Math.random() * 4);
       this.pokemon = this.pokemonOptions[rndPokemon];
     },
-    checkAnswer(pokemonId) {
+    checkAnswer(pokemonSelected) {
       this.showPokemon = true;
-      console.log(pokemonId)
+      this.showAnswer = true;
+      if (pokemonSelected === this.pokemon.id) {
+        this.message = `Muy bien, ${this.pokemon.name} era el pokemon oculto.`
+      } else {
+        this.message = `Fallaste, el pokemon era ${this.pokemon.name}`
+      }
+    },
+    newGame() {
+      this.showAnswer = false
+      this.showPokemon = false
+      this.pokemon = null
+      this.pokemonOptions = []
+      this.mixPokemonArray()
     }
   },
   mounted() {
